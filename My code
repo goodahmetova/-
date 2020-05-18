@@ -1,0 +1,22 @@
+import "dart:math";
+
+void main() {
+  quadraticEquation(11, -120, -11); // Должен вывести x1=11, x2=-0.09
+  quadraticEquation(1, 6, 9); // Должен вывести: x=3
+  quadraticEquation(1, 1, 1); // Должен вывести: нет корней
+}
+
+void quadraticEquation(a, b, c) {
+  var discriminant = (b * b) - (4 * a * c);
+  if (discriminant > 0) {
+    String root1 = (-b + sqrt(discriminant) / (2 * a)) as String;
+    String root2 = (-b - sqrt(discriminant) / (2 * a)) as String;
+
+    print("Два корня:" + root2 + root1);
+  } else if (discriminant == 0) {
+    String root1 = -b / (2 * a) as String;
+    print("Один корень = " + root1);
+  } else if (discriminant < 0) {
+    print("Нет корней");
+  }
+}
